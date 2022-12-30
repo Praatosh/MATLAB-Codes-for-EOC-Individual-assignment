@@ -1,0 +1,11 @@
+function [D0,D1,D2,D3]=one_four_demux(in,S0,S1) 
+    A1=NOT_Gate(S0);
+    A2=NOT_Gate(S1);
+    A3=AND_Gate(A1,A2);
+    D0=AND_Gate(A3,in);
+    A4=AND_Gate(A2,S0);
+    D1=AND_Gate(A4,in);
+    A5=AND_Gate(S1,A1);
+    D2=AND_Gate(A5,in);
+    A6=AND_Gate(S1,S0);
+    D3=AND_Gate(A6,in);
